@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { ResetStyles } from './ResetStyles';
-import { variables } from '../styles/variables';
-
-const { color } = variables;
+import { vars } from '../styles/variables';
 
 export const GlobalStyles = createGlobalStyle`
   ${ResetStyles};
@@ -10,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Open Sans', sans-serif;
     background-color: white;
-    color: ${color.black};
+    color: ${vars.color.black};
     
   } 
 
