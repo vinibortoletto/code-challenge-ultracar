@@ -4,19 +4,20 @@ import { Header } from './components/';
 import 'antd/dist/reset.css';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { useLocation } from 'react-router-dom';
+import { EmployeeProvider } from './contexts/EmployeeContext';
 
 function App() {
   const location = useLocation();
   const { pathname } = location;
 
   return (
-    <div>
-      <GlobalStyles />
-
-      {pathname !== '/employee/login' && <Header />}
-
-      <Routes />
-    </div>
+    <EmployeeProvider>
+      <main>
+        <GlobalStyles />
+        {pathname !== '/employee/login' && <Header />}
+        <Routes />
+      </main>
+    </EmployeeProvider>
   );
 }
 
