@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import * as S from './ServiceList.styles';
 import { Table } from 'antd';
 import { EmployeeContext, ServicesContext } from '../../contexts';
 
@@ -79,7 +78,7 @@ const ServiceList = () => {
   }, [employeeName]);
 
   return (
-    <S.Section>
+    <section>
       <button
         type="button"
         onClick={() => history.push('/employee/area')}
@@ -114,7 +113,7 @@ const ServiceList = () => {
       </div>
 
       <Table dataSource={filteredServiceList} columns={columns} />
-    </S.Section>
+    </section>
   );
 };
 
