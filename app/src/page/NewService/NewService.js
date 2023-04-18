@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import { ServicesContext } from '../../contexts/ServicesContext';
 import { EmployeeContext } from '../../contexts';
 import { getCurrentDateAndTime } from '../../utils';
+import { useHistory } from 'react-router-dom';
 
 const requiredField = 'Campo obrigatório';
 const phoneRegExp = /^[0-9]{10,11}$/;
@@ -51,6 +52,7 @@ const NewService = () => {
   const { createNewService, carPartList, setCarPartList, serviceList } =
     useContext(ServicesContext);
   const { employeeName } = useContext(EmployeeContext);
+  const history = useHistory();
 
   const getNewServiceKey = () => {
     const newKey = Number(serviceList[serviceList.length - 1].key) + 1;
@@ -80,10 +82,12 @@ const NewService = () => {
       };
 
       delete newServiceObj.requireCarParts;
+
       createNewService(newServiceObj);
       setCarPartList([]);
 
-      alert(JSON.stringify(newServiceObj, null, 2));
+      history.push('/employee/service/all');
+
       setSubmitting(false);
       resetForm();
     }, 400);
