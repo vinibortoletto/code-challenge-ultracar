@@ -13,9 +13,10 @@ function App() {
   return (
     <EmployeeProvider>
       <ServicesProvider>
+        <GlobalStyles />
+        {pathname !== '/employee/login' && <Header />}
+
         <main>
-          <GlobalStyles />
-          {pathname !== '/employee/login' && <Header />}
           <Routes />
         </main>
       </ServicesProvider>

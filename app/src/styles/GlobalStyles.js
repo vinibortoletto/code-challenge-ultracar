@@ -9,7 +9,13 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     background-color: white;
     color: ${vars.color.black};
-  } 
+    padding: 0 1rem;
+  }
+  
+  main {
+    max-width: 50rem;;
+    margin: 0 auto
+  }
 
   .section_margin {
     margin-bottom: var(--m_hg);
