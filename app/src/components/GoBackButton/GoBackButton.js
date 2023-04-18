@@ -8,7 +8,7 @@ const GoBackButton = () => {
   return (
     <S.Button
       type="button"
-      onClick={() => history.goBack()}
+      onClick={() => history.push('/employee/area')}
     >{`< Voltar`}</S.Button>
   );
 };

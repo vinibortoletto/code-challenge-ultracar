@@ -71,10 +71,6 @@ const ClientForm = () => {
           placeholder="Cor do carro"
         />
       </S.CarFields>
-
-      {/* <Button type="submit" disabled={isSubmitting}>
-              Gerar QR Code
-            </Button> */}
     </S.Section>
   );
 };

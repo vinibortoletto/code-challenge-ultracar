@@ -67,26 +67,31 @@ const NewService = () => {
     return carPartList.reduce((acc, carPart) => acc + carPart.price, 0);
   };
 
+  const handleNewServiceObject = (values) => {
+    const newServiceObj = {
+      ...values,
+      key: getNewServiceKey(),
+      id: getNewServiceId(),
+      employee: employeeName,
+      client: values.fullname,
+      price: sumServicePrice(),
+      startDate: getCurrentDateAndTime(),
+      endDate: 'Em andamento',
+      status: 'Em andamento',
+    };
+
+    delete newServiceObj.requireCarParts;
+
+    return newServiceObj;
+  };
+
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
-      const newServiceObj = {
-        ...values,
-        key: getNewServiceKey(),
-        id: getNewServiceId(),
-        employee: employeeName,
-        client: values.fullname,
-        price: sumServicePrice(),
-        startDate: getCurrentDateAndTime(),
-        endDate: 'Em andamento',
-        status: 'Em andamento',
-      };
-
-      delete newServiceObj.requireCarParts;
-
+      const newServiceObj = handleNewServiceObject(values);
       createNewService(newServiceObj);
       setCarPartList([]);
 
-      history.push('/employee/service/all');
+      history.push('/employee/service/new/qrcode');
 
       setSubmitting(false);
       resetForm();
