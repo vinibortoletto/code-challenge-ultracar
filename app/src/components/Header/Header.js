@@ -17,9 +17,9 @@ const Header = () => {
   return (
     <S.Header>
       <S.Logo src={simpleLogo} alt="ultracar-logo" />
-      <S.Button type="button" onClick={handleLogout}>
+      <S.LogOutButton type="button" onClick={handleLogout}>
         Sair
-      </S.Button>
+      </S.LogOutButton>
     </S.Header>
   );
 };

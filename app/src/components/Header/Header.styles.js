@@ -12,6 +12,10 @@ export const Logo = styled.img`
   width: 3rem;
 `;
 
-export const Button = styled.button`
+export const LogOutButton = styled.button`
   color: teal;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
