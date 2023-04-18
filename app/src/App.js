@@ -1,10 +1,10 @@
 import React from 'react';
 import Routes from './routes/Routes';
 import { Header } from './components/';
-import 'antd/dist/reset.css';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { useLocation } from 'react-router-dom';
 import { EmployeeProvider, ServicesProvider } from './contexts';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const location = useLocation();
@@ -19,6 +19,8 @@ function App() {
         <main>
           <Routes />
         </main>
+
+        <Footer />
       </ServicesProvider>
     </EmployeeProvider>
   );
