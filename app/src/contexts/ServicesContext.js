@@ -11,7 +11,9 @@ export function ServicesProvider({ children }) {
   const [carPartList, setCarPartList] = useState([]);
 
   const filterServiceListByEmployee = (employee) => {
-    const newFilteredServiceList = serviceListMock.filter(
+    console.log(serviceList);
+
+    const newFilteredServiceList = serviceList.filter(
       (service) => service.employee === employee
     );
 
@@ -19,7 +21,7 @@ export function ServicesProvider({ children }) {
   };
 
   const filterServiceListByAll = () => {
-    setFilteredServiceList([...serviceListMock]);
+    setFilteredServiceList([...serviceList]);
   };
 
   const getLocalServiceList = () => {
