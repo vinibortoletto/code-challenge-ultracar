@@ -1,11 +1,15 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import * as S from './GoBackButton.styles';
 
 const GoBackButton = () => {
   const history = useHistory();
 
   return (
-    <button type="button" onClick={() => history.goBack()}>{`< Voltar`}</button>
+    <S.Button
+      type="button"
+      onClick={() => history.goBack()}
+    >{`< Voltar`}</S.Button>
   );
 };
 
