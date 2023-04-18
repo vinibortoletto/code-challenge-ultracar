@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Table } from 'antd';
 import { EmployeeContext, ServicesContext } from '../../contexts';
-import { GoBackButton } from '../../components';
+import { GoBackButton, Title } from '../../components';
 
 const columns = [
   {
@@ -79,7 +79,7 @@ const ServiceList = () => {
     <section>
       <GoBackButton />
 
-      <h1>Lista de serviços</h1>
+      <Title text="Lista de serviços" />
 
       <div>
         <label htmlFor={filterOptions.employee}>
