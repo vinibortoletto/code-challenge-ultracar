@@ -8,6 +8,7 @@ export function ServicesProvider({ children }) {
   const [filteredServiceList, setFilteredServiceList] = useState([]);
   const [newService, setNewService] = useState({});
   const [serviceList, setServiceList] = useState([]);
+  const [carPartList, setCarPartList] = useState([]);
 
   const filterServiceListByEmployee = (employee) => {
     const newFilteredServiceList = serviceListMock.filter(
@@ -51,6 +52,8 @@ export function ServicesProvider({ children }) {
     serviceList,
     setServiceList,
     createNewService,
+    carPartList,
+    setCarPartList,
   };
 
   return (

@@ -48,7 +48,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const NewService = () => {
-  const { createNewService } = useContext(ServicesContext);
+  const { createNewService, setCarPartList } = useContext(ServicesContext);
   const { employeeName } = useContext(EmployeeContext);
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
@@ -60,6 +60,7 @@ const NewService = () => {
       };
       delete newServiceObj.requireCarParts;
       createNewService(newServiceObj);
+      setCarPartList([]);
 
       alert(JSON.stringify(newServiceObj, null, 2));
       setSubmitting(false);
