@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import fullLogo from '../../assets/full-logo.png';
-import { EmployeeContext } from '../../contexts/EmployeeContext';
+import { EmployeeContext } from '../../contexts';
 import * as S from './EmployeeLogin.styles';
 import { Button, TextField } from '../../components';
 
@@ -11,11 +11,13 @@ const EmployeeLogin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    localStorage.setItem('employee', employeeName);
     history.push('/employee/area');
   };
 
   const handleInputChange = (event) => {
-    setEmployeeName(event.target.value);
+    const { value } = event.target;
+    setEmployeeName(value);
   };
 
   return (
