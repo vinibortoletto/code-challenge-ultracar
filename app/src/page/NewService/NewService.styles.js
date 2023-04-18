@@ -23,6 +23,12 @@ export const Section = styled.section`
     position: static;
   }
 
+  h2 {
+    font-weight: bold;
+    color: ${vars.color.teal};
+    margin-bottom: 0.5rem;
+  }
+
   form {
     display: grid;
     gap: 1rem;
