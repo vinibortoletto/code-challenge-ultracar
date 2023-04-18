@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, GoBackButton, Title } from '../../components';
+import { Button, GoBackButton, HorizontalLine, Title } from '../../components';
 import ClientForm from './ClientForm/ClientForm';
 import * as S from './NewService.styles';
 import ServiceForm from './ServiceForm/ServiceForm';
@@ -98,6 +98,7 @@ const NewService = () => {
       <GoBackButton />
 
       <Title text="Novo serviço" />
+      <HorizontalLine />
 
       <Formik
         initialValues={initialValues}
@@ -107,7 +108,9 @@ const NewService = () => {
         {({ isSubmitting, values }) => (
           <Form>
             <ClientForm />
+            <HorizontalLine />
             <ServiceForm requireCarParts={values.requireCarParts} />
+            <HorizontalLine />
 
             <Button type="submit" disabled={isSubmitting}>
               Iniciar serviço

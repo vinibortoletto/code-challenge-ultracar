@@ -3,3 +3,4 @@ export { default as TextField } from './TextField/TextField';
 export { default as Button } from './Button/Button.styles';
 export { default as GoBackButton } from './GoBackButton/GoBackButton';
 export { default as Title } from './Title/Title';
+export { default as HorizontalLine } from './HorizontalLine/HorizontalLine';
