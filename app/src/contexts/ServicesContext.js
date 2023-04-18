@@ -7,7 +7,7 @@ export const ServicesContext = createContext();
 export function ServicesProvider({ children }) {
   const [filteredServiceList, setFilteredServiceList] = useState([]);
   const [newService, setNewService] = useState({});
-  const [serviceList, setServiceList] = useState([]);
+  const [serviceList, setServiceList] = useState([...serviceListMock]);
   const [carPartList, setCarPartList] = useState([]);
 
   const filterServiceListByEmployee = (employee) => {

@@ -3,7 +3,7 @@ import getCurrentDateAndTime from './getCurrentDateAndTime';
 const serviceListMock = [
   {
     key: '1',
-    id: '001',
+    id: 1,
     status: 'Finalizado',
     client: 'Fulano',
     employee: 'Beltrano',
@@ -13,7 +13,7 @@ const serviceListMock = [
   },
   {
     key: '2',
-    id: '002',
+    id: 2,
     status: 'Em andamento',
     client: 'Fulano',
     employee: 'Sicrano',
@@ -23,7 +23,7 @@ const serviceListMock = [
   },
   {
     key: '3',
-    id: '003',
+    id: 3,
     status: 'Finalizado',
     client: 'Fulano',
     employee: 'Beltrano',

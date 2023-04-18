@@ -48,16 +48,37 @@ const validationSchema = Yup.object().shape({
 });
 
 const NewService = () => {
-  const { createNewService, setCarPartList } = useContext(ServicesContext);
+  const { createNewService, carPartList, setCarPartList, serviceList } =
+    useContext(ServicesContext);
   const { employeeName } = useContext(EmployeeContext);
+
+  const getNewServiceKey = () => {
+    const newKey = Number(serviceList[serviceList.length - 1].key) + 1;
+    return String(newKey);
+  };
+
+  const getNewServiceId = () => {
+    return serviceList[serviceList.length - 1].id + 1;
+  };
+
+  const sumServicePrice = () => {
+    return carPartList.reduce((acc, carPart) => acc + carPart.price, 0);
+  };
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
       const newServiceObj = {
         ...values,
+        key: getNewServiceKey(),
+        id: getNewServiceId(),
         employee: employeeName,
+        client: values.fullname,
+        price: sumServicePrice(),
         startDate: getCurrentDateAndTime(),
+        endDate: 'Em andamento',
+        status: 'Em andamento',
       };
+
       delete newServiceObj.requireCarParts;
       createNewService(newServiceObj);
       setCarPartList([]);
