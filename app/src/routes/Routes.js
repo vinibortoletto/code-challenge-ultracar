@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { EmployeeArea, EmployeeLogin } from '../page/';
+import { EmployeeArea, EmployeeLogin, ServiceList } from '../page/';
 
 const Routes = () => {
   return (
@@ -12,6 +12,7 @@ const Routes = () => {
       />
       <Route exact path="/employee/login" component={EmployeeLogin} />
       <Route exact path="/employee/area" component={EmployeeArea} />
+      <Route exact path="/employee/service/all" component={ServiceList} />
     </>
   );
 };
