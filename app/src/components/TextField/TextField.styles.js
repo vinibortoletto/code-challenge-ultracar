@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   input {
-    width: 20rem;
+    width: 100%;
     border: 1px solid ${vars.color.black};
     border-radius: ${vars.radius.default};
     padding: ${vars.padding.default};
