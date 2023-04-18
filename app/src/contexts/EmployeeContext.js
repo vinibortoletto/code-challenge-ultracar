@@ -7,8 +7,9 @@ export function EmployeeProvider({ children }) {
   const [employeeName, setEmployeeName] = useState('');
 
   const getEmployeeFromLocalStorage = () => {
-    const localEmployee = localStorage.getItem('employee');
-    if (!localEmployee) return localStorage.setItem('employee', employeeName);
+    const localEmployee = JSON.parse(localStorage.getItem('employee'));
+    if (!localEmployee)
+      return localStorage.setItem('employee', JSON.stringify(employeeName));
     setEmployeeName(localEmployee);
   };
 

@@ -11,7 +11,7 @@ const EmployeeLogin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('employee', employeeName);
+    localStorage.setItem('employee', JSON.stringify(employeeName));
     history.push('/employee/area');
   };
 
