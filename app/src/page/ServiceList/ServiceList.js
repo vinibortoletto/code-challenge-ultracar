@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Table } from 'antd';
 import { EmployeeContext, ServicesContext } from '../../contexts';
 import { GoBackButton, HorizontalLine, Title } from '../../components';
+import * as S from './ServiceList.styles';
 
 const columns = [
   {
@@ -82,8 +83,8 @@ const ServiceList = () => {
       <Title text="Lista de serviços" />
       <HorizontalLine />
 
-      <div>
-        <label htmlFor={filterOptions.employee}>
+      <S.FilterFields>
+        <div>
           <input
             type="radio"
             name="filter"
@@ -92,10 +93,10 @@ const ServiceList = () => {
             checked={filter === filterOptions.employee}
             onChange={handleInputChange}
           />
-          Meus serviços
-        </label>
+          <label htmlFor={filterOptions.employee}>Meus serviços</label>
+        </div>
 
-        <label htmlFor={filterOptions.all}>
+        <div>
           <input
             type="radio"
             name="filter"
@@ -104,9 +105,9 @@ const ServiceList = () => {
             checked={filter === filterOptions.all}
             onChange={handleInputChange}
           />
-          Todos os serviços
-        </label>
-      </div>
+          <label htmlFor={filterOptions.all}>Todos os serviços</label>
+        </div>
+      </S.FilterFields>
 
       <Table dataSource={filteredServiceList} columns={columns} />
     </section>
