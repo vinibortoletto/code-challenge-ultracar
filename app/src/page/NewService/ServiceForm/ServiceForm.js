@@ -5,6 +5,7 @@ import * as S from './ServiceForm.styles';
 import { AutoComplete } from 'antd';
 import { bool } from 'prop-types';
 import { ServicesContext } from '../../../contexts';
+import { HorizontalLine } from '../../../components';
 
 const options = [
   {
@@ -40,7 +41,6 @@ const carPartListStock = [
 ];
 
 const ServiceForm = ({ requireCarParts }) => {
-  // const [carPartList, setCarPartList] = useState([]);
   const { carPartList, setCarPartList } = useContext(ServicesContext);
   const [autocomplete, setAutocomplete] = useState('');
 
@@ -81,16 +81,32 @@ const ServiceForm = ({ requireCarParts }) => {
         placeholder="Descrição do serviço"
       />
 
-      <AutoComplete
-        style={{ width: 200 }}
-        placeholder="Nome do funcionário"
-        filterOption={true}
-        options={options}
-        value={autocomplete}
-        onChange={handleAutocompleteChange}
-        onSelect={handleAutoComplete}
-        disabled={requireCarParts}
-      />
+      <S.CarPartSearch>
+        <AutoComplete
+          // style={{ width: 300 }}
+          placeholder="Nome do funcionário"
+          filterOption={true}
+          options={options}
+          value={autocomplete}
+          onChange={handleAutocompleteChange}
+          onSelect={handleAutoComplete}
+          disabled={requireCarParts}
+        />
+
+        <S.Checkbox disabled={carPartList.length > 0 && true}>
+          <Field
+            type="checkbox"
+            name="requireCarParts"
+            id="requireCarParts"
+            placeholder="Não requer novas peças"
+            disabled={carPartList.length > 0 && true}
+          />
+          <label htmlFor="requireCarParts">Não requer novas peças</label>
+          <p>
+            <ErrorMessage name="requireCarParts" />
+          </p>
+        </S.Checkbox>
+      </S.CarPartSearch>
 
       {carPartList.map(({ name, price, id }) => (
         <div key={id}>
@@ -101,20 +117,6 @@ const ServiceForm = ({ requireCarParts }) => {
           </button>
         </div>
       ))}
-
-      <S.Checkbox disabled={carPartList.length > 0 && true}>
-        <Field
-          type="checkbox"
-          name="requireCarParts"
-          id="requireCarParts"
-          placeholder="Não requer novas peças"
-          disabled={carPartList.length > 0 && true}
-        />
-        <label htmlFor="requireCarParts">Não requer novas peças</label>
-        <p>
-          <ErrorMessage name="requireCarParts" />
-        </p>
-      </S.Checkbox>
     </section>
   );
 };
