@@ -17,7 +17,7 @@ git clone https://github.com/vinibortoletto/code-challenge-ultracar.git
 Entre no diretório:
 
 ```
-cd code-challenge-ultracar
+cd code-challenge-ultracar && cd app
 ```
 
 Instale as dependências
