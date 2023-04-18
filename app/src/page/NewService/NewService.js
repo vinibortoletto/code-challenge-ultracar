@@ -1,19 +1,19 @@
 import React from 'react';
 import { GoBackButton, Title } from '../../components';
+import ClientForm from './ClientForm/ClientForm';
+import * as S from './NewService.styles';
+import ServiceForm from './ServiceForm/ServiceForm';
 
 const NewService = () => {
   return (
-    <section>
+    <S.Section>
       <GoBackButton />
 
       <Title text="Novo serviço" />
 
-      <section>
-        <h2>Informações do cliente</h2>
-
-        <form></form>
-      </section>
-    </section>
+      <ClientForm />
+      <ServiceForm />
+    </S.Section>
   );
 };
 
