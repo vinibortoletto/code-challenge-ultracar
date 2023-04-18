@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { vars } from '../../styles/variables';
 
 export const Header = styled.header`
   display: flex;
@@ -13,7 +14,7 @@ export const Logo = styled.img`
 `;
 
 export const LogOutButton = styled.button`
-  color: teal;
+  color: ${vars.color.teal};
 
   &:hover {
     text-decoration: underline;
