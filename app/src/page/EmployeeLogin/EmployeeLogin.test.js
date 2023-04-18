@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import renderWithRouter from '../../utils/renderWithRouter';
 import App from '../../App';
 
-describe.only('Integration test for "EmployeeLogin" page', () => {
+describe('Integration test for "EmployeeLogin" page', () => {
   it('should redirect to route "/employee/login" when accessing route "/"', () => {
     const { history } = renderWithRouter(<App />, '/');
     const { pathname } = history.location;
