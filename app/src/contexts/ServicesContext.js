@@ -6,6 +6,7 @@ export const ServicesContext = createContext();
 
 export function ServicesProvider({ children }) {
   const [filteredServiceList, setFilteredServiceList] = useState([]);
+  const [newService, setNewService] = useState({});
 
   const filterServiceListByEmployee = (employee) => {
     const newFilteredServiceList = serviceListMock.filter(
@@ -23,6 +24,8 @@ export function ServicesProvider({ children }) {
     filteredServiceList,
     filterServiceListByEmployee,
     filterServiceListByAll,
+    newService,
+    setNewService,
   };
 
   return (
