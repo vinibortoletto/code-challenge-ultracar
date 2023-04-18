@@ -1,6 +1,9 @@
 import React from 'react';
+import { act, render } from '@testing-library/react';
 import Header from './Header';
-import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import renderWithRouter from '../../utils/renderWithRouter';
+import App from '../../App';
 
 describe('Unit test for "Header" component', function () {
   it('should render logo', () => {
@@ -10,5 +13,13 @@ describe('Unit test for "Header" component', function () {
     expect(getByText('Sair')).toBeInTheDocument();
   });
 
-  it.todo('should render a logout button');
+  it('should render a logout button', () => {
+    const { getByRole, history } = renderWithRouter(<App />, '/employee/area');
+    const button = getByRole('button', { name: 'Sair' });
+
+    act(() => userEvent.click(button));
+
+    const { pathname } = history.location;
+    expect(pathname).toBe('/employee/login');
+  });
 });
