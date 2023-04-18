@@ -3,6 +3,7 @@ export const vars = {
     teal: 'teal',
     black: '#212121',
     white: 'white',
+    d_white: '#f1f1f1',
     grey: 'grey',
     red: '#ca3232',
   },
