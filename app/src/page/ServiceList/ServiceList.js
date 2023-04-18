@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Table } from 'antd';
 import { EmployeeContext, ServicesContext } from '../../contexts';
+import { GoBackButton } from '../../components';
 
 const columns = [
   {
@@ -42,8 +42,6 @@ const columns = [
 ];
 
 const ServiceList = () => {
-  const history = useHistory();
-
   const { employeeName } = useContext(EmployeeContext);
 
   const {
@@ -79,10 +77,7 @@ const ServiceList = () => {
 
   return (
     <section>
-      <button
-        type="button"
-        onClick={() => history.push('/employee/area')}
-      >{`< Voltar`}</button>
+      <GoBackButton />
 
       <h1>Lista de serviços</h1>
 
