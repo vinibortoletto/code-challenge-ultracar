@@ -5,7 +5,6 @@ import * as S from './ServiceForm.styles';
 import { AutoComplete } from 'antd';
 import { bool } from 'prop-types';
 import { ServicesContext } from '../../../contexts';
-import { HorizontalLine } from '../../../components';
 
 const options = [
   {
@@ -83,7 +82,6 @@ const ServiceForm = ({ requireCarParts }) => {
 
       <S.CarPartSearch>
         <AutoComplete
-          // style={{ width: 300 }}
           placeholder="Nome do funcionário"
           filterOption={true}
           options={options}
@@ -109,13 +107,15 @@ const ServiceForm = ({ requireCarParts }) => {
       </S.CarPartSearch>
 
       {carPartList.map(({ name, price, id }) => (
-        <div key={id}>
+        <S.CarPartRow key={id}>
           <div>{name}</div>
-          <div>{price}</div>
-          <button type="button" onClick={() => removeCarPart(id)}>
-            x Remover
-          </button>
-        </div>
+          <div>R$ {price}</div>
+          <div>
+            <button type="button" onClick={() => removeCarPart(id)}>
+              x Remover
+            </button>
+          </div>
+        </S.CarPartRow>
       ))}
     </section>
   );

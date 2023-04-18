@@ -5,6 +5,7 @@ export const vars = {
     white: 'white',
     d_white: '#f1f1f1',
     grey: 'grey',
+    l_grey: 'lightgrey',
     red: '#ca3232',
   },
   radius: {
