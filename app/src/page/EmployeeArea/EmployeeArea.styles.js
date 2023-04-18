@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import { vars } from '../../styles/variables';
+import { breakpoint } from '../../styles/breakpoint';
 
 export const Section = styled.section`
   height: 60vh;
@@ -23,9 +24,12 @@ export const Greeting = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   gap: 0.5rem;
-  font-size: 1.3rem;
 
-  button {
-    padding: 2rem 3rem;
+  @media ${breakpoint('600')} {
+    font-size: 1.3rem;
+
+    button {
+      padding: 2rem 3rem;
+    }
   }
 `;
