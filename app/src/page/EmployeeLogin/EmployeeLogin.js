@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import fullLogo from '../../assets/full-logo.png';
 import { EmployeeContext } from '../../contexts';
-import * as S from './EmployeeLogin.styles';
 import { Button, TextField } from '../../components';
+import fullLogo from '../../assets/full-logo.png';
+import * as S from './EmployeeLogin.styles';
 
 const EmployeeLogin = () => {
   const history = useHistory();

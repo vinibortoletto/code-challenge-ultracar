@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { EmployeeContext } from '../../contexts';
 import { useHistory } from 'react-router-dom';
+import { EmployeeContext } from '../../contexts';
 import { Button } from '../../components';
 import * as S from './EmployeeArea.styles';
 

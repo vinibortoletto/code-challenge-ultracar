@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import TextField from '../TextField/TextField';
 import { ErrorMessage, Field } from 'formik';
-import * as S from './ServiceForm.styles';
 import { AutoComplete } from 'antd';
 import { bool } from 'prop-types';
 import { ServicesContext } from '../../../contexts';
+import TextField from '../TextField/TextField';
+import * as S from './ServiceForm.styles';
 
 const options = [
   {

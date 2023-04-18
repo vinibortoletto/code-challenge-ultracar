@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import QRCode from 'qrcode.react';
 import { ServicesContext } from '../../contexts';
 import * as S from './QrCode.styles';
-import { Button, GoBackButton } from '../../components';
+import { Button } from '../../components';
 import { useHistory } from 'react-router-dom';
 
 const QrCode = () => {

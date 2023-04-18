@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { Button, GoBackButton, HorizontalLine, Title } from '../../components';
-import ClientForm from './ClientForm/ClientForm';
-import * as S from './NewService.styles';
-import ServiceForm from './ServiceForm/ServiceForm';
 import { Form, Formik } from 'formik';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { ServicesContext } from '../../contexts/ServicesContext';
 import { EmployeeContext } from '../../contexts';
 import { getCurrentDateAndTime } from '../../utils';
-import { useHistory } from 'react-router-dom';
+import { Button, GoBackButton, HorizontalLine, Title } from '../../components';
+import ClientForm from './ClientForm/ClientForm';
+import ServiceForm from './ServiceForm/ServiceForm';
+import * as S from './NewService.styles';
 
 const requiredField = 'Campo obrigatório';
 const phoneRegExp = /^[0-9]{10,11}$/;

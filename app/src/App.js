@@ -14,6 +14,7 @@ function App() {
     <EmployeeProvider>
       <ServicesProvider>
         <GlobalStyles />
+
         {pathname !== '/employee/login' && <Header />}
 
         <main>

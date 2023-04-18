@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import simpleLogo from '../../assets/simple-logo.png';
-import * as S from './Header.styles';
 import { useHistory } from 'react-router-dom';
 import { EmployeeContext } from '../../contexts';
+import simpleLogo from '../../assets/simple-logo.png';
+import * as S from './Header.styles';
 
 const Header = () => {
   const history = useHistory();
