@@ -11,8 +11,6 @@ export function ServicesProvider({ children }) {
   const [carPartList, setCarPartList] = useState([]);
 
   const filterServiceListByEmployee = (employee) => {
-    console.log(serviceList);
-
     const newFilteredServiceList = serviceList.filter(
       (service) => service.employee === employee
     );
