@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { EmployeeLogin } from '../page/';
+import { EmployeeArea, EmployeeLogin } from '../page/';
 
 const Routes = () => {
   return (
@@ -11,6 +11,7 @@ const Routes = () => {
         render={() => <Redirect to={'/employee/login'} />}
       />
       <Route exact path="/employee/login" component={EmployeeLogin} />
+      <Route exact path="/employee/area" component={EmployeeArea} />
     </>
   );
 };
