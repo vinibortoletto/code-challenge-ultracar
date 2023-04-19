@@ -6,6 +6,8 @@
   </p>
 </div>
 
+### <a href='https://code-challenge-ultracar-vinicius-bortoletto.vercel.app/'>Visite o app</a>
+
 Para testas a aplicação, siga os passos abaixo.
 
 Clone este repositório:
