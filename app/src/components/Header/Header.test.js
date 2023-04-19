@@ -1,13 +1,15 @@
 import React from 'react';
-import { act, render } from '@testing-library/react';
-import Header from './Header';
+import { act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouter from '../../utils/renderWithRouter';
 import App from '../../App';
 
 describe('Unit test for "Header" component', function () {
   it('should render logo', () => {
-    const { getByAltText, getByText } = render(<Header />);
+    const { getByAltText, getByText } = renderWithRouter(
+      <App />,
+      '/employee/area'
+    );
 
     expect(getByAltText('ultracar-logo')).toBeInTheDocument();
     expect(getByText('Sair')).toBeInTheDocument();
