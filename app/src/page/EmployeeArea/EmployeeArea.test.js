@@ -11,7 +11,7 @@ describe('Integration test for "EmployeeArea" page', () => {
   });
 
   it('should render a greeting with the logged employee name', () => {
-    const { getByLabelText, getByRole, getByText } = renderWithRouter(
+    const { getByLabelText, getByRole } = renderWithRouter(
       <App />,
       '/employee/login'
     );
@@ -21,7 +21,7 @@ describe('Integration test for "EmployeeArea" page', () => {
       userEvent.click(getByRole('button', { name: 'Entrar' }));
     });
 
-    expect(getByText('Olá, Fulano')).toBeInTheDocument();
+    expect(getByRole('heading', { name: /olá, fulano/i })).toBeInTheDocument();
   });
 
   it('should render "new service" button', () => {
