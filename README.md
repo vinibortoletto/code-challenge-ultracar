@@ -6,7 +6,7 @@
   </p>
 </div>
 
-### <a href='https://code-challenge-ultracar-vinicius-bortoletto.vercel.app/'>Visite o app</a>
+### <a href='https://code-challenge-ultracar-vinicius-bortoletto.vercel.app/' target="_blank">Visite o app</a>
 
 Para testas a aplicação, siga os passos abaixo.
 
